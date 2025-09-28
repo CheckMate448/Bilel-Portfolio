@@ -2,41 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Yassine Toumi Portfolio Design System - Modern Tech Professional */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
+    /* Base Colors - Clean whites and professional grays */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 13% 18%;
 
+    /* Card System - Subtle elevation */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 18%;
 
+    /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 13% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Blue Primary - Trust and Technology */
+    --primary: 217 91% 60%; /* Modern blue #3b82f6 */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    --primary-glow: 217 91% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light and Professional */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+    --secondary-hover: 220 14% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Tones - Subtle backgrounds */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Colors - Green for success, Orange for highlights */
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 13% 18%;
+    --accent-success: 142 76% 36%; /* Green #16a34a */
+    --accent-warning: 25 95% 53%; /* Orange #fb923c */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Interactive Elements */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    /* Design System Values */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-success)), hsl(var(--accent-warning)));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--primary) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -2px hsl(var(--primary) / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -4px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 20px hsl(var(--primary-glow) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +133,69 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground px-8 py-4 rounded-lg font-semibold;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-glow;
+    @apply border-0 hover:from-primary-hover hover:to-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-300 hover:bg-secondary-hover hover:scale-105 hover:shadow-md;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent-success to-accent-warning text-white px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Card Components */
+  .card-elevated {
+    @apply bg-card border border-border rounded-lg p-6;
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-card to-muted border border-border rounded-lg p-6;
+    @apply transition-all duration-300 hover:shadow-md hover:scale-105;
+  }
+
+  /* Text Styling */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent;
+  }
+
+  .text-hero {
+    @apply text-4xl md:text-6xl font-bold tracking-tight;
+  }
+
+  .text-section {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+
+  /* Skill Pills */
+  .skill-pill {
+    @apply bg-muted text-muted-foreground px-4 py-2 rounded-full text-sm font-medium;
+    @apply transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105;
+  }
+
+  .skill-pill-featured {
+    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-md;
   }
 }
