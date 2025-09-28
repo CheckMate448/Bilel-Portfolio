@@ -6,32 +6,44 @@ import { Badge } from "@/components/ui/badge";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Modern e-commerce solution with React, Node.js, and Stripe integration. Features include real-time inventory, user authentication, and responsive design.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Classement",
+      description: "A dynamic web application for managing and displaying rankings, leveraging Netlify's scalable infrastructure for performance and easy deployment. It provides tools for tracking positions in various categories, ideal for competitions or analytics.",
+      technologies: ["React", "Netlify", "JavaScript"],
       status: "Completed",
-      category: "Web Application"
+      category: "Web Application",
+      liveLink: "https://classement.netlify.app"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, team collaboration features, and intuitive drag-and-drop interface.",
-      technologies: ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
-      status: "In Progress",
-      category: "SaaS Application"
+      title: "Eau Vive Chat",
+      description: "A real-time chat platform designed for seamless communication, integrated with multiple channels like WhatsApp and Messenger. Built for user engagement and deployed on Netlify for reliability.",
+      technologies: ["React", "Netlify", "Socket.io"],
+      status: "Completed",
+      category: "Chat Application",
+      liveLink: "https://eauvive-chat.netlify.app"
     },
     {
-      title: "Portfolio Website",
-      description: "Personal portfolio showcasing projects and skills with modern design, smooth animations, and optimized performance.",
-      technologies: ["React", "TypeScript", "Tailwind", "Vite"],
+      title: "Gallery 360",
+      description: "An interactive photo gallery featuring 360-degree views and image transformations, perfect for showcasing visuals in an immersive way. Developed with modern web tools and hosted on Netlify.",
+      technologies: ["JavaScript", "Netlify", "CSS3"],
       status: "Completed",
-      category: "Portfolio"
+      category: "Gallery Application",
+      liveLink: "https://gallery-360.netlify.app"
     },
     {
-      title: "Weather Dashboard",
-      description: "Real-time weather application with location-based forecasts, interactive maps, and beautiful data visualizations.",
-      technologies: ["JavaScript", "Chart.js", "Weather API", "CSS3"],
+      title: "Vegeta Kitchen",
+      description: "A recipe-focused site dedicated to vegetarian cuisine, offering meal ideas and a user-friendly interface for food enthusiasts. Deployed on Netlify for fast access and smooth performance.",
+      technologies: ["React", "Netlify", "Tailwind CSS"],
       status: "Completed",
-      category: "Web Application"
+      category: "Recipe Platform",
+      liveLink: "https://vegeta-kitchen.netlify.app"
+    },
+    {
+      title: "Taxi Swiss Transfert",
+      description: "Official website for a professional taxi and transfer service in Switzerland, featuring booking forms, pricing calculators (e.g., km-based rates for limousines, minibuses, and large buses), and 24/7 contact options like +41 78 264 32 35. Emphasizes reliable transportation with years of experience.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      status: "Completed",
+      category: "Business Website",
+      liveLink: "https://www.taxi-swiss-transfert.ch/"
     }
   ];
 
@@ -93,9 +105,11 @@ const Projects = () => {
                     <Github className="h-4 w-4 mr-2" />
                     Code
                   </Button>
-                  <Button size="sm" className="btn-hero flex-1">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
+                  <Button size="sm" className="btn-hero flex-1" asChild>
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live Demo
+                    </a>
                   </Button>
                 </div>
               </div>
