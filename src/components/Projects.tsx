@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Project1 from "@/assets/Project1.jpeg";
-import Project2 from "@/assets/Project2.jpeg";
-import Project3 from "@/assets/Project3.jpeg";
+import Project1 from "@/assets/Porject1.jpg";
+import Project2 from "@/assets/Project2.jpg";
+import Project3 from "@/assets/Project3.jpg";
 import Project4 from "@/assets/Project4.jpeg";
 
 const Projects = () => {
