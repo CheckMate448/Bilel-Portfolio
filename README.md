@@ -1,4 +1,4 @@
-# Yassine Toumi Digital Showcase
+# Bilel Gnaouia Digital Showcase
 
 This is a personal portfolio website built with React, Vite, TypeScript, Shadcn-UI, and Tailwind CSS.
 
