@@ -67,22 +67,37 @@ const Projects = () => {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="card-elevated group overflow-hidden">
-              <div className="w-full h-48 bg-muted/10 overflow-hidden">
+            <Card key={index} className="card-elevated group overflow-hidden flex flex-col">
+              <div className="w-full h-44 bg-muted/10 overflow-hidden">
                 <img
                   src={project.image ?? '/placeholder.svg'}
                   alt={project.title}
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-md font-medium truncate">{project.title}</h3>
-                  <Badge className="text-xs">{project.status}</Badge>
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-md font-medium">{project.title}</h3>
+                    <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(project.status)}`}>
+                      {project.status}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">{project.description}</p>
+
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <Badge key={i} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <Badge variant="outline" className="text-xs mt-2">
-                  {project.category}
-                </Badge>
+
+                <div className="mt-4 flex items-center justify-between">
+                  <Badge variant="outline" className="text-xs">{project.category}</Badge>
+                  <Button variant="ghost" size="sm">View</Button>
+                </div>
               </div>
             </Card>
           ))}
