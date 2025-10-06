@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.jpeg";  // Ensure this path matches the exact filename
@@ -70,12 +70,6 @@ const Hero = () => {
 
               {/* Social Links */}
               <div className="flex gap-4 justify-center lg:justify-start">
-                <Button variant="outline" size="icon" className="hover-lift">
-                  <Github className="h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="icon" className="hover-lift">
-                  <Linkedin className="h-5 w-5" />
-                </Button>
                 <Button variant="outline" size="icon" className="hover-lift">
                   <Mail className="h-5 w-5" />
                 </Button>

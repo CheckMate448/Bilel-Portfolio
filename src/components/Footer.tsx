@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Mail, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -16,12 +16,6 @@ const Footer = () => {
               and intuitive digital experiences that inspire and engage.
             </p>
             <div className="flex gap-3">
-              <Button variant="outline" size="icon" className="hover-lift">
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon" className="hover-lift">
-                <Linkedin className="h-4 w-4" />
-              </Button>
               <Button variant="outline" size="icon" className="hover-lift">
                 <Mail className="h-4 w-4" />
               </Button>
