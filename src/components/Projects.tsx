@@ -8,8 +8,6 @@ import Project2 from "@/assets/Project2.jpg";
 import Project3 from "@/assets/Project3.jpg";
 import Project4 from "@/assets/Project4.jpeg";
 import Project5 from "@/assets/Project5.jpeg";
-import Project6 from "@/assets/Project6.jpeg";
-import Project7 from "@/assets/Project7.jpeg";
 
 const Projects = () => {
   const projects = [
@@ -60,7 +58,7 @@ const Projects = () => {
       technologies: ["Mobile UI", "Prototyping"],
       status: "In Progress",
       category: "Mobile",
-      image: Project6
+      image: '/placeholder.svg'
     },
     {
       title: "Project 7",
@@ -68,7 +66,7 @@ const Projects = () => {
       technologies: ["Branding", "UI", "Marketing"],
       status: "Completed",
       category: "Case Study",
-      image: Project7
+      image: '/placeholder.svg'
     }
   ];
 
