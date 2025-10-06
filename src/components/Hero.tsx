@@ -1,7 +1,10 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
-import profilePhoto from "@/assets/profile-photo.jpg";  // Ensure this path matches the exact filename
+import profilePhoto from "@/assets/profile-photo.jpeg";  // Ensure this path matches the exact filename
+import ThemeToggle from "./ThemeToggle";
+import { openPrintableCV } from "@/utils/generateCV";
+import CVDownload from "./CVDownload";
 
 const Hero = () => {
   return (
@@ -20,13 +23,16 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="absolute top-6 right-6 z-20">
+          <ThemeToggle />
+        </div>
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Profile Photo */}
           <div className="relative">
             <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/20 hover-glow">
               <img 
                 src={profilePhoto} 
-                alt="Yassine Toumi - IT Graduate & Web Developer"
+                alt="Bilel Gnaouia - Graphic Designer UI/UX Designer"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
@@ -41,17 +47,17 @@ const Hero = () => {
               <div className="space-y-4">
                 <h1 className="text-hero">
                   Hello, I'm{" "}
-                  <span className="text-gradient">Yassine Toumi</span>
+                  <span className="text-gradient">Bilel Gnaouia</span>
                 </h1>
                 <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
-                  IT Graduate & Web Developer from Tunisia
+                  Graphique Designer & UI/UX Designer from Tunisia
                 </h2>
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                Passionate about technology, creativity, and design. I build modern web applications 
-                that combine technical excellence with beautiful user experiences. Ready to turn 
-                innovative ideas into reality.
+                Passionate about design, creativity, and user experience. 
+                I craft modern visuals and intuitive interfaces that blend aesthetic appeal with functional excellence.
+                Dedicated to transforming ideas into engaging designs, I bring brands and digital products to life through innovative graphic design and seamless UI/UX solutions.
               </p>
 
               {/* Action Buttons */}
@@ -59,9 +65,7 @@ const Hero = () => {
                 <Button className="btn-hero">
                   View My Work
                 </Button>
-                <Button className="btn-secondary">
-                  Download CV
-                </Button>
+                <CVDownload />
               </div>
 
               {/* Social Links */}

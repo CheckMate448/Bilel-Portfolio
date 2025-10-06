@@ -10,14 +10,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "yassine.toumi548@gmail.com",
-      action: "mailto:yassine.toumi548@gmail.com"
+      details: "Bilelg363@gmail.com",
+      action: "mailto:Bilelg363@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      details: "+216 264 439 311",
-      action: "tel:+216 26 439 311"
+      details: "+216 22 645 407",
+      action: "tel:+216 22 645 4071"
     },
     {
       icon: MapPin,

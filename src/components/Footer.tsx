@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gradient">Yassine Toumi</h3>
+            <h3 className="text-xl font-bold text-gradient">Bilel Gnaouia</h3>
             <p className="text-muted-foreground">
-              IT Graduate & Web Developer passionate about creating innovative 
-              digital solutions that make a difference.
+              Graphic & UI/UX Designer passionate about crafting creative visuals 
+              and intuitive digital experiences that inspire and engage.
             </p>
             <div className="flex gap-3">
               <Button variant="outline" size="icon" className="hover-lift">
@@ -51,10 +51,10 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Services</h4>
             <nav className="flex flex-col space-y-2">
-              <span className="text-muted-foreground">Web Development</span>
-              <span className="text-muted-foreground">Frontend Development</span>
+              <span className="text-muted-foreground">Graphic Design</span>
               <span className="text-muted-foreground">UI/UX Design</span>
-              <span className="text-muted-foreground">Consulting</span>
+              <span className="text-muted-foreground">Brand Identity</span>
+              <span className="text-muted-foreground">Creative Consulting</span>
             </nav>
           </div>
         </div>
@@ -62,7 +62,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Yassine Toumi. All rights reserved.
+            © {currentYear} Bilel Gnaouia. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-muted-foreground text-sm">
             <span>Made with</span>

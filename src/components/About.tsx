@@ -1,27 +1,27 @@
-import { Code, Lightbulb, Target, Users } from "lucide-react";
+import { Palette, PenTool, Target, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const About = () => {
   const traits = [
     {
-      icon: Code,
-      title: "Technical Excellence",
-      description: "Passionate about clean code, modern frameworks, and cutting-edge technologies that solve real-world problems."
+      icon: Palette,
+      title: "Design Excellence",
+      description: "Passionate about creating visually stunning and user-friendly designs that leave a lasting impression."
     },
     {
-      icon: Lightbulb,
-      title: "Creative Innovation",
-      description: "Always exploring new ideas and approaches to create unique, impactful digital experiences."
+      icon: PenTool,
+      title: "Creative Vision",
+      description: "Always exploring new design trends and approaches to craft unique, impactful visual experiences."
     },
     {
       icon: Target,
-      title: "Goal-Oriented",
-      description: "Organized and motivated professional who delivers projects on time with attention to detail."
+      title: "Detail-Oriented",
+      description: "Organized and precise, ensuring every design element aligns perfectly with brand identity and user needs."
     },
     {
       icon: Users,
       title: "Collaborative Spirit",
-      description: "Strong believer in teamwork and effective communication to achieve outstanding results."
+      description: "Strong believer in teamwork and open communication to bring ideas to life and achieve outstanding results."
     }
   ];
 
@@ -31,9 +31,9 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-section mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            As a young IT graduate from Tunisia, I combine technical expertise with creative vision 
-            to build web applications that make a difference. My journey in technology is driven by 
-            curiosity, dedication, and a desire to innovate.
+            As a passionate Graphic and UI/UX Designer from Tunisia, I combine creativity with 
+            strategy to design visuals and interfaces that connect with people. My journey in design 
+            is driven by curiosity, dedication, and a desire to create meaningful experiences.
           </p>
         </div>
 
@@ -57,27 +57,35 @@ const About = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-gradient">My Journey</h3>
               <p className="text-muted-foreground mb-4">
-                Born and raised in Tunisia, I discovered my passion for technology early on. 
-                After completing my IT degree, I've been focused on mastering web development 
-                and exploring the endless possibilities of modern technology.
+                Born and raised in Tunisia, I discovered my passion for design at a young age. 
+                From sketching ideas to mastering digital tools like Photoshop, Illustrator, and Figma, 
+                I have shaped my skills around bringing concepts to life visually.
               </p>
               <p className="text-muted-foreground">
-                I believe in the power of technology to transform ideas into reality, and I'm 
-                excited to contribute to projects that push boundaries and create meaningful impact.
+                I believe design is more than aesthetics — it’s about creating experiences that inspire 
+                and engage. I’m excited to contribute to projects that blend creativity, functionality, 
+                and innovation.
               </p>
+                <div className="mt-6">
+                  <h4 className="text-lg font-medium mb-2">Selected Experience</h4>
+                  <ul className="text-muted-foreground list-disc list-inside">
+                    <li>Enix ads — Graphic Designer</li>
+                    <li>Bharcom — Graphic Designer</li>
+                  </ul>
+                </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-accent-success rounded-full"></div>
-                <span className="text-sm font-medium">IT Graduate</span>
+                <span className="text-sm font-medium">Graphic Designer</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium">Web Developer</span>
+                <span className="text-sm font-medium">UI/UX Designer</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-accent-warning rounded-full"></div>
-                <span className="text-sm font-medium">Tech Enthusiast</span>
+                <span className="text-sm font-medium">Creative Thinker</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-accent-success rounded-full"></div>

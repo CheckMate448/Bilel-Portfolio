@@ -1,49 +1,44 @@
-import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Project1 from "@/assets/Project1.jpeg";
+import Project2 from "@/assets/Project2.jpeg";
+import Project3 from "@/assets/Project3.jpeg";
+import Project4 from "@/assets/Project4.jpeg";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Classement",
-      description: "A dynamic web application for managing and displaying rankings, leveraging Netlify's scalable infrastructure for performance and easy deployment. It provides tools for tracking positions in various categories, ideal for competitions or analytics.",
-      technologies: ["React", "Netlify", "JavaScript"],
+      title: "Project 1",
+      description: "Landing / hero-banner concept that emphasizes bold gradients, large typography, and layered imagery to create a modern first impression.",
+      technologies: ["Visual Design", "Layout", "Typography"],
       status: "Completed",
-      category: "Web Application",
-      liveLink: "https://classement.netlify.app"
+      category: "Hero / Landing",
+      image: Project1
     },
     {
-      title: "Eau Vive Chat",
-      description: "A real-time chat platform designed for seamless communication, integrated with multiple channels like WhatsApp and Messenger. Built for user engagement and deployed on Netlify for reliability.",
-      technologies: ["React", "Netlify", "Socket.io"],
+      title: "Project 2",
+      description: "Personal branding and profile module highlighting avatar treatment, circular frames, and subtle hover interactions for a human-centred presentation.",
+      technologies: ["Branding", "UI", "Micro-interactions"],
       status: "Completed",
-      category: "Chat Application",
-      liveLink: "https://eauvive-chat.netlify.app"
+      category: "Personal Brand",
+      image: Project2
     },
     {
-      title: "Gallery 360",
-      description: "An interactive photo gallery featuring 360-degree views and image transformations, perfect for showcasing visuals in an immersive way. Developed with modern web tools and hosted on Netlify.",
-      technologies: ["JavaScript", "Netlify", "CSS3"],
+      title: "Project 3",
+      description: "Gallery-style mockup focused on grid composition and image rhythm — useful as a gallery or portfolio landing section when populated with visuals.",
+      technologies: ["Gallery", "Imagery"],
       status: "Completed",
-      category: "Gallery Application",
-      liveLink: "https://gallery-360.netlify.app"
+      category: "Presentation",
+      image: Project3
     },
     {
-      title: "Vegeta Kitchen",
-      description: "A recipe-focused site dedicated to vegetarian cuisine, offering meal ideas and a user-friendly interface for food enthusiasts. Deployed on Netlify for fast access and smooth performance.",
-      technologies: ["React", "Netlify", "Tailwind CSS"],
+      title: "Project 4",
+      description: "Brand exploration layout demonstrating logo placement, color accents, and sample content blocks for identity exploration.",
+      technologies: ["Branding", "Layout"],
       status: "Completed",
-      category: "Recipe Platform",
-      liveLink: "https://vegeta-kitchen.netlify.app"
-    },
-    {
-      title: "Taxi Swiss Transfert",
-      description: "Official website for a professional taxi and transfer service in Switzerland, featuring booking forms, pricing calculators (e.g., km-based rates for limousines, minibuses, and large buses), and 24/7 contact options like +41 78 264 32 35. Emphasizes reliable transportation with years of experience.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      status: "Completed",
-      category: "Business Website",
-      liveLink: "https://www.taxi-swiss-transfert.ch/"
+      category: "Brand",
+      image: Project4
     }
   ];
 
@@ -64,54 +59,30 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-section mb-4">Featured Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of recent projects showcasing my skills in web development, 
-            design, and problem-solving. Each project represents a unique challenge 
-            and learning opportunity.
+            A curated selection of recent projects highlighting my expertise in graphic design and UI/UX. 
+            Each design reflects a balance of creativity, functionality, and user-centered thinking, showcasing my ability to solve problems 
+            and deliver impactful digital experiences.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <Card key={index} className="card-elevated group overflow-hidden">
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <Badge variant="outline" className="text-xs">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <Badge className={`${getStatusColor(project.status)} text-xs`}>
-                    {project.status}
-                  </Badge>
+              <div className="w-full h-48 bg-muted/10 overflow-hidden">
+                <img
+                  src={project.image ?? '/placeholder.svg'}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-md font-medium truncate">{project.title}</h3>
+                  <Badge className="text-xs">{project.status}</Badge>
                 </div>
-
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <Button size="sm" className="btn-secondary flex-1">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button size="sm" className="btn-hero flex-1" asChild>
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
-                </div>
+                <Badge variant="outline" className="text-xs mt-2">
+                  {project.category}
+                </Badge>
               </div>
             </Card>
           ))}
