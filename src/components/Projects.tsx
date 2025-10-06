@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState } from 'react';
+import ProjectModal from './ProjectModal';
 import Project1 from "@/assets/Porject1.jpg";
 import Project2 from "@/assets/Project2.jpg";
 import Project3 from "@/assets/Project3.jpg";
@@ -53,6 +55,8 @@ const Projects = () => {
     }
   };
 
+  const [selected, setSelected] = useState<{ src: string; title?: string } | null>(null);
+
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -68,7 +72,7 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <Card key={index} className="card-elevated group overflow-hidden flex flex-col">
-              <div className="w-full h-44 bg-muted/10 overflow-hidden">
+              <div className="w-full h-44 bg-muted/10 overflow-hidden cursor-zoom-in" onClick={() => setSelected({ src: project.image, title: project.title })}>
                 <img
                   src={project.image ?? '/placeholder.svg'}
                   alt={project.title}
@@ -101,6 +105,9 @@ const Projects = () => {
               </div>
             </Card>
           ))}
+          {selected && (
+            <ProjectModal src={selected.src} title={selected.title} onClose={() => setSelected(null)} />
+          )}
         </div>
 
         {/* Call to Action */}
