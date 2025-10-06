@@ -82,6 +82,11 @@ const Projects = () => {
   };
 
   const [selected, setSelected] = useState<{ src: string; title?: string } | null>(null);
+  const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
+
+  const handleImageLoad = (index: number) => {
+    setLoadedMap((s) => ({ ...s, [index]: true }));
+  };
 
   return (
     <section className="py-20 bg-muted/30">
@@ -98,11 +103,22 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <Card key={index} className="card-elevated group overflow-hidden flex flex-col">
-              <div className="w-full h-44 bg-muted/10 overflow-hidden cursor-zoom-in" onClick={() => setSelected({ src: project.image, title: project.title })}>
+              <div className="w-full h-44 bg-muted/10 overflow-hidden cursor-zoom-in relative" onClick={() => setSelected({ src: project.image, title: project.title })}>
+                {/* Loading overlay */}
+                {!loadedMap[index] && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-muted/20">
+                    <div className="w-8 h-8 border-4 border-white/20 border-t-primary rounded-full animate-spin" />
+                  </div>
+                )}
                 <img
                   src={project.image ?? '/placeholder.svg'}
                   alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={800}
+                  onLoad={() => handleImageLoad(index)}
+                  className={`w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105 ${loadedMap[index] ? 'opacity-100' : 'opacity-0'}`}
                 />
               </div>
               <div className="p-4 flex-1 flex flex-col justify-between">
